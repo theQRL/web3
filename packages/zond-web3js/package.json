@@ -20,11 +20,11 @@
         "postinstall": "echo \"WARNING: the web3-shh and web3-bzz api will be deprecated in the next version\""
     },
     "dependencies": {
+        "web3-zond": "0.1.0",
         "web3-zond-bzz": "0.1.0",
         "web3-zond-core": "0.1.0",
-        "web3-zond": "0.1.0",
-        "web3-zond-personal": "0.1.0",
         "web3-zond-net": "0.1.0",
+        "web3-zond-personal": "0.1.0",
         "web3-zond-shh": "0.1.0",
         "web3-zond-utils": "0.1.0"
     },

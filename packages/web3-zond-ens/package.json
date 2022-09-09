@@ -15,11 +15,11 @@
     "dependencies": {
         "content-hash": "^2.5.2",
         "eth-ens-namehash": "2.0.8",
+        "web3-zond-abi": "0.1.0",
+        "web3-zond-contract": "0.1.0",
         "web3-zond-core": "0.1.0",
         "web3-zond-core-helpers": "0.1.0",
         "web3-zond-core-promievent": "0.1.0",
-        "web3-zond-abi": "0.1.0",
-        "web3-zond-contract": "0.1.0",
         "web3-zond-utils": "0.1.0"
     },
     "devDependencies": {
