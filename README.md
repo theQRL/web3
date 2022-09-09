@@ -1,45 +1,44 @@
-<p style="text-align: center;">
+<!-- <p style="text-align: center;">
   <img src="assets/logo/web3js.jpg" width="200" alt="web3.js">
-</p>
+</p> -->
 
-# web3.js - Ethereum JavaScript API
+# zond-web3.js - QRL JavaScript API
 
-[![Discord][discord-image]][discord-url] [![StackExchange][stackexchange-image]][stackexchange-url] [![NPM Package Version][npm-image-version]][npm-url] [![NPM Package Downloads][npm-image-downloads]][npm-url] [![Build Status][actions-image]][actions-url] [![Dev Dependency Status][deps-dev-image]][deps-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Lerna][lerna-image]][lerna-url] [![Netlify Status][netlify-image]][netlify-url] [![GitPOAP Badge][gitpoap-image]][gitpoap-url]
+<!-- [![Discord][discord-image]][discord-url] [![StackExchange][stackexchange-image]][stackexchange-url] [![NPM Package Version][npm-image-version]][npm-url] [![NPM Package Downloads][npm-image-downloads]][npm-url] [![Build Status][actions-image]][actions-url] [![Dev Dependency Status][deps-dev-image]][deps-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Lerna][lerna-image]][lerna-url] [![Netlify Status][netlify-image]][netlify-url] [![GitPOAP Badge][gitpoap-image]][gitpoap-url] -->
 
-This is the Ethereum [JavaScript API][docs]
+This is the QRL JavaScript API
 which connects to the [Generic JSON-RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) spec.
 
-You need to run a local or remote [Ethereum](https://www.ethereum.org/) node to use this library.
+You need to run a local or remote QRL node to use this library.
 
-Please read the [documentation][docs] for more.
 
 ## Installation
 
 ### Node
 
 ```bash
-npm install web3
+npm install zond-web3js
 ```
 
 ### Yarn
 
 ```bash
-yarn add web3
+yarn add zond-web3js
 ```
 
 ### In the Browser
 
 Use the prebuilt `dist/web3.min.js`, or
-build using the [web3.js][repo] repository:
+build using the [zond-web3.js][repo] repository:
 
 ```bash
 npm run build
 ```
 
 Then include `dist/web3.min.js` in your html file.
-This will expose `Web3` on the window object.
+This will expose `ZondWeb3` on the window object.
 
-Or via jsDelivr CDN:
+<!-- Or via jsDelivr CDN:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
@@ -49,14 +48,14 @@ UNPKG:
 
 ```html
 <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
-```
+``` -->
 
 ## Usage
 
 ```js
 // In Node.js
-const Web3 = require('web3');
-const web3 = new Web3('ws://localhost:8546');
+const ZondWeb3 = require('zond-web3js');
+const web3 = new ZondWeb3('ws://localhost:8546');
 console.log(web3);
 // Output
 {
@@ -78,19 +77,19 @@ web3.setProvider(new Web3.providers.WebsocketProvider('ws://localhost:8546'));
 There you go, now you can use it:
 
 ```js
-web3.eth.getAccounts().then(console.log);
+web3.zond.getAccounts().then(console.log);
 ```
 
 ### Usage with TypeScript
 
 We support types within the repo itself. Please open an issue here if you find any wrong types.
 
-You can use `web3.js` as follows:
+You can use `zond-web3.js` as follows:
 
 ```typescript
-import Web3 from 'web3';
-import { BlockHeader, Block } from 'web3-eth' // ex. package types
-const web3 = new Web3('ws://localhost:8546');
+import ZondWeb3 from 'zond-web3js';
+import { BlockHeader, Block } from 'web3-zond' // ex. package types
+const web3 = new ZondWeb3('ws://localhost:8546');
 ```
 
 If you are using the types in a `commonjs` module, like in a Node app, you just have to enable `esModuleInterop` and `allowSyntheticDefaultImports` in your `tsconfig` for typesystem compatibility:
@@ -262,7 +261,7 @@ npm run build
 npm test
 ```
 
-### Contributing
+<!-- ### Contributing
 
 Please follow the [Contribution Guidelines](./CONTRIBUTIONS.md) and [Review Guidelines](./REVIEW.md).
 
@@ -311,4 +310,4 @@ This project adheres to the [Release Guidelines](./REVIEW.md).
 
 ## Semantic versioning
 
-This project follows [semver](https://semver.org/) as closely as possible **from version 1.3.0 onwards**. Earlier minor version bumps [might](https://github.com/ethereum/web3.js/issues/3758) have included breaking behavior changes.
+This project follows [semver](https://semver.org/) as closely as possible **from version 1.3.0 onwards**. Earlier minor version bumps [might](https://github.com/ethereum/web3.js/issues/3758) have included breaking behavior changes. -->

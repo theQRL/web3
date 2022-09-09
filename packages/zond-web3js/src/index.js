@@ -1,12 +1,12 @@
 /*
     This file is part of web3.js.
 
-    web3.js is free software: you can redistribute it and/or modify
+    zond-web3.js is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    web3.js is distributed in the hope that it will be useful,
+    zond-web3.js is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Lesser General Public License for more details.
@@ -14,16 +14,6 @@
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/**
- * @file index.js
- * @authors:
- *   Fabian Vogelsteller <fabian@ethereum.org>
- *   Gav Wood <gav@parity.io>
- *   Jeffrey Wilcke <jeffrey.wilcke@ethereum.org>
- *   Marek Kotewicz <marek@parity.io>
- *   Marian Oancea <marian@ethereum.org>
- * @date 2017
- */
 
 "use strict";
 
@@ -37,7 +27,7 @@ var Shh = require('web3-zond-shh');
 var Bzz = require('web3-zond-bzz');
 var utils = require('web3-zond-utils');
 
-var Web3 = function Web3() {
+var ZondWeb3 = function ZondWeb3() {
     var _this = this;
 
     // sets _requestmanager etc
@@ -64,9 +54,9 @@ var Web3 = function Web3() {
     };
 };
 
-Web3.version = version;
-Web3.utils = utils;
-Web3.modules = {
+ZondWeb3.version = version;
+ZondWeb3.utils = utils;
+ZondWeb3.modules = {
     Zond: Zond,
     Net: Net,
     Personal: Personal,
@@ -74,7 +64,7 @@ Web3.modules = {
     Bzz: Bzz
 };
 
-core.addProviders(Web3);
+core.addProviders(ZondWeb3);
 
-module.exports = Web3;
+module.exports = ZondWeb3;
 

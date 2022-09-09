@@ -1,7 +1,7 @@
 /*
-    This file is part of web3.js.
+    This file is part of zond-web3.js.
 
-    web3.js is free software: you can redistribute it and/or modify
+    zond-web3.js is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -14,11 +14,6 @@
     You should have received a copy of the GNU Lesser General Public License
     along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
-/**
- * @file index.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
- * @date 2017
- */
 
 "use strict";
 

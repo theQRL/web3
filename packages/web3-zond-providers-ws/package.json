@@ -1,8 +1,7 @@
 {
   "name": "web3-zond-providers-ws",
-  "version": "1.7.5",
+  "version": "0.1.0",
   "description": "Module to handle web3 RPC connections over WebSockets.",
-  "repository": "https://github.com/ethereum/web3.js/tree/1.x/packages/web3-providers-ws",
   "license": "LGPL-3.0",
   "engines": {
     "node": ">=8.0.0"
@@ -15,7 +14,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "eventemitter3": "4.0.4",
-    "web3-zond-core-helpers": "file:../web3-zond-core-helpers",
+    "web3-zond-core-helpers": "0.1.0",
     "websocket": "^1.0.32"
   },
   "devDependencies": {

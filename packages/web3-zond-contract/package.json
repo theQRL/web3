@@ -1,8 +1,7 @@
 {
     "name": "web3-zond-contract",
-    "version": "1.7.5",
-    "description": "Web3 module to interact with Ethereum smart contracts.",
-    "repository": "https://github.com/ethereum/web3.js/tree/1.x/packages/web3-eth-contract",
+    "version": "0.1.0",
+    "description": "Web3 module to interact with QRL smart contracts.",
     "license": "LGPL-3.0",
     "engines": {
         "node": ">=8.0.0"
@@ -15,14 +14,14 @@
     "main": "lib/index.js",
     "dependencies": {
         "@types/bn.js": "^5.1.0",
-        "web3-zond-core": "file:../web3-zond-core",
-        "web3-zond-core-helpers": "file:../web3-zond-core-helpers",
-        "web3-zond-core-method": "file:../web3-zond-core-method",
-        "web3-zond-core-promievent": "file:../web3-zond-core-promievent",
-        "web3-zond-core-subscriptions": "file:../web3-zond-core-subscriptions",
-        "web3-zond-abi": "file:../web3-zond-abi",
-        "web3-zond-utils": "file:../web3-zond-utils",
-        "web3-zond-accounts": "file:../web3-zond-accounts"
+        "web3-zond-core": "0.1.0",
+        "web3-zond-core-helpers": "0.1.0",
+        "web3-zond-core-method": "0.1.0",
+        "web3-zond-core-promievent": "0.1.0",
+        "web3-zond-core-subscriptions": "0.1.0",
+        "web3-zond-abi": "0.1.0",
+        "web3-zond-utils": "0.1.0",
+        "web3-zond-accounts": "0.1.0"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

@@ -1,7 +1,7 @@
 /*
- This file is part of web3.js.
+ This file is part of zond-web3.js.
 
- web3.js is free software: you can redistribute it and/or modify
+ zond-web3.js is free software: you can redistribute it and/or modify
  it under the terms of the GNU Lesser General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
@@ -13,11 +13,6 @@
 
  You should have received a copy of the GNU Lesser General Public License
  along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
- */
-/**
- * @file index.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
- * @date 2017
  */
 
 "use strict";
@@ -61,7 +56,7 @@ var uncleCountCall = function (args) {
 };
 
 
-var Eth = function Eth() {
+var Zond = function Zond() {
     var _this = this;
 
     // sets _requestmanager
@@ -341,8 +336,8 @@ var Eth = function Eth() {
     var Contract = function Contract() {
         BaseContract.apply(this, arguments);
 
-        // when Eth.setProvider is called, call packageInit
-        // on all contract instances instantiated via this Eth
+        // when Zond.setProvider is called, call packageInit
+        // on all contract instances instantiated via this Zond
         // instances. This will update the currentProvider for
         // the contract instances
         var _this = this;
@@ -705,9 +700,9 @@ var Eth = function Eth() {
 
 };
 
-// Adds the static givenProvider and providers property to the Eth module
-core.addProviders(Eth);
+// Adds the static givenProvider and providers property to the Zond module
+core.addProviders(Zond);
 
 
-module.exports = Eth;
+module.exports = Zond;
 

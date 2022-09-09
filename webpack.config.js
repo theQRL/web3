@@ -57,7 +57,7 @@ module.exports = {
     output: {
         filename: "[name].min.js",
         path: path.resolve(__dirname, "dist"),
-        library: "Web3",
+        library: "ZondWeb3",
         libraryTarget: "umd",
     },
 };
