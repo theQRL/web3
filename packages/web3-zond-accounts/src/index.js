@@ -1,35 +1,30 @@
 /*
- This file is part of web3.js.
+ This file is part of zond-web3.js.
 
- web3.js is free software: you can redistribute it and/or modify
+ zond-web3.js is free software: you can redistribute it and/or modify
  it under the terms of the GNU Lesser General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- web3.js is distributed in the hope that it will be useful,
+ zond-web3.js is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU Lesser General Public License for more details.
 
  You should have received a copy of the GNU Lesser General Public License
- along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
- */
-/**
- * @file accounts.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
- * @date 2017
+ along with zond-web3.js.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 'use strict';
 
-var core = require('web3-core');
-var Method = require('web3-core-method');
+var core = require('web3-zond-core');
+var Method = require('web3-zond-core-method');
 var Account = require('eth-lib/lib/account');
 var cryp = (typeof global === 'undefined') ? require('crypto-browserify') : require('crypto');
 var scrypt = require('scrypt-js');
 var uuid = require('uuid');
-var utils = require('web3-utils');
-var helpers = require('web3-core-helpers');
+var utils = require('web3-zond-utils');
+var helpers = require('web3-zond-core-helpers');
 var {TransactionFactory} = require('@ethereumjs/tx');
 var Common = require('@ethereumjs/common').default;
 var HardForks = require('@ethereumjs/common').Hardfork;

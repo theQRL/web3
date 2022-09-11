@@ -29,7 +29,7 @@ yarn add zond-web3js
 ### In the Browser
 
 Use the prebuilt `dist/web3.min.js`, or
-build using the [zond-web3.js][repo] repository:
+build using the zond-web3.js repository:
 
 ```bash
 npm run build
@@ -59,7 +59,7 @@ const web3 = new ZondWeb3('ws://localhost:8546');
 console.log(web3);
 // Output
 {
-    eth: ... ,
+    zond: ... ,
     shh: ... ,
     utils: ...,
     ...

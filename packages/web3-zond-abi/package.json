@@ -1,5 +1,5 @@
 {
-    "name": "web3-eth-abi",
+    "name": "web3-zond-abi",
     "version": "0.1.0",
     "description": "Web3 module encode and decode EVM in/output.",
     "license": "LGPL-3.0",
