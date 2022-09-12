@@ -255,22 +255,11 @@ Build the web3.js package:
 npm run build
 ```
 
-### Publishing
-
-For initial version we need to publish individual modules inside ./packages directory seperately.
-Example: To publish web3-zond -
+### Testing (mocha)
 
 ```bash
-cd packages/web3-zond
-npm login
-npm publish
+npm test
 ```
-
-For further releases we can publish using lerna tool.
-Run:
-```bash
-npm run publish
-``` 
 
 <!-- ### Contributing
 
