@@ -44,9 +44,9 @@ var RequestManager = function RequestManager(provider, net) {
 RequestManager.givenProvider = givenProvider;
 
 RequestManager.providers = {
-    WebsocketProvider: require('web3-providers-ws'),
-    HttpProvider: require('web3-providers-http'),
-    IpcProvider: require('web3-providers-ipc')
+    WebsocketProvider: require('@theqrl/web3-providers-ws'),
+    HttpProvider: require('@theqrl/web3-providers-http'),
+    IpcProvider: require('@theqrl/web3-providers-ipc')
 };
 
 
