@@ -10,6 +10,9 @@ module.exports = {
     devtool: false,
     plugins: [
         new CleanWebpackPlugin(),
+        new webpack.SourceMapDevToolPlugin({
+            filename: "[file].map",
+        }),
         new webpack.IgnorePlugin({
             checkResource(resource) {
                 // "@ethereumjs/common/genesisStates" consists ~800KB static files which are no more needed
