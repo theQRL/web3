@@ -36,7 +36,7 @@ npm run build
 ```
 
 Then include `dist/web3.min.js` in your html file.
-This will expose `ZondWeb3` on the window object.
+This will expose `Web3` on the window object.
 
 <!-- Or via jsDelivr CDN:
 
@@ -54,8 +54,8 @@ UNPKG:
 
 ```js
 // In Node.js
-const ZondWeb3 = require('@theqrl/web3');
-const web3 = new ZondWeb3('ws://localhost:8546');
+const Web3 = require('@theqrl/web3');
+const web3 = new Web3('ws://localhost:8546');
 console.log(web3);
 // Output
 {
@@ -87,9 +87,9 @@ We support types within the repo itself. Please open an issue here if you find a
 You can use `@theqrl/web3.js` as follows:
 
 ```typescript
-import ZondWeb3 from '@theqrl/web3';
+import Web3 from '@theqrl/web3';
 import { BlockHeader, Block } from '@theqrl/web3-zond' // ex. package types
-const web3 = new ZondWeb3('ws://localhost:8546');
+const web3 = new Web3('ws://localhost:8546');
 ```
 
 If you are using the types in a `commonjs` module, like in a Node app, you just have to enable `esModuleInterop` and `allowSyntheticDefaultImports` in your `tsconfig` for typesystem compatibility:
