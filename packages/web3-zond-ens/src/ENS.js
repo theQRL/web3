@@ -1,6 +1,6 @@
 /*
-    This file is part of zond-web3.js.
-    zond-web3.js is free software: you can redistribute it and/or modify
+    This file is part of @theqrl/web3.js.
+    @theqrl/web3.js is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -9,14 +9,14 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Lesser General Public License for more details.
     You should have received a copy of the GNU Lesser General Public License
-    along with zond-web3.js.  If not, see <http://www.gnu.org/licenses/>.
+    along with @theqrl/web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 "use strict";
 
 var config = require('./config');
-var formatters = require('web3-zond-core-helpers').formatters;
-var utils = require('web3-zond-utils');
+var formatters = require('@theqrl/web3-core-helpers').formatters;
+var utils = require('@theqrl/web3-utils');
 var Registry = require('./contracts/Registry');
 var ResolverMethodHandler = require('./lib/ResolverMethodHandler');
 var contenthash = require('./lib/contentHash');

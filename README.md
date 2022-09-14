@@ -2,7 +2,7 @@
   <img src="assets/logo/web3js.jpg" width="200" alt="web3.js">
 </p> -->
 
-# zond-web3.js - QRL JavaScript API
+# @theqrl/web3.js - QRL JavaScript API
 
 <!-- [![Discord][discord-image]][discord-url] [![StackExchange][stackexchange-image]][stackexchange-url] [![NPM Package Version][npm-image-version]][npm-url] [![NPM Package Downloads][npm-image-downloads]][npm-url] [![Build Status][actions-image]][actions-url] [![Dev Dependency Status][deps-dev-image]][deps-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Lerna][lerna-image]][lerna-url] [![Netlify Status][netlify-image]][netlify-url] [![GitPOAP Badge][gitpoap-image]][gitpoap-url] -->
 
@@ -17,19 +17,19 @@ You need to run a local or remote QRL node to use this library.
 ### Node
 
 ```bash
-npm install zond-web3js
+npm install @theqrl/web3
 ```
 
 ### Yarn
 
 ```bash
-yarn add zond-web3js
+yarn add @theqrl/web3
 ```
 
 ### In the Browser
 
 Use the prebuilt `dist/web3.min.js`, or
-build using the zond-web3.js repository:
+build using the @theqrl/web3.js repository:
 
 ```bash
 npm run build
@@ -54,7 +54,7 @@ UNPKG:
 
 ```js
 // In Node.js
-const ZondWeb3 = require('zond-web3js');
+const ZondWeb3 = require('@theqrl/web3');
 const web3 = new ZondWeb3('ws://localhost:8546');
 console.log(web3);
 // Output
@@ -84,11 +84,11 @@ web3.zond.getAccounts().then(console.log);
 
 We support types within the repo itself. Please open an issue here if you find any wrong types.
 
-You can use `zond-web3.js` as follows:
+You can use `@theqrl/web3.js` as follows:
 
 ```typescript
-import ZondWeb3 from 'zond-web3js';
-import { BlockHeader, Block } from 'web3-zond' // ex. package types
+import ZondWeb3 from '@theqrl/web3';
+import { BlockHeader, Block } from '@theqrl/web3-zond' // ex. package types
 const web3 = new ZondWeb3('ws://localhost:8546');
 ```
 
@@ -258,10 +258,10 @@ npm run build
 ### Publishing
 
 For initial version we need to publish individual modules inside ./packages directory seperately.
-Example: To publish web3-zond -
+Example: To publish @theqrl/web3-zond -
 
 ```bash
-cd packages/web3-zond
+cd packages/@theqrl/web3-zond
 npm login
 npm publish
 ```

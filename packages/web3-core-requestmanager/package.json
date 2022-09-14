@@ -1,0 +1,20 @@
+{
+    "name": "@theqrl/web3-core-requestmanager",
+    "version": "0.1.0",
+    "description": "Web3 module to handle requests to external providers.",
+    "license": "LGPL-3.0",
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "main": "lib/index.js",
+    "scripts": {
+        "compile": "tsc -b tsconfig.json"
+    },
+    "dependencies": {
+        "util": "^0.12.0",
+        "@theqrl/web3-core-helpers": "0.1.0",
+        "@theqrl/web3-providers-http": "0.1.0",
+        "@theqrl/web3-providers-ipc": "0.1.0",
+        "@theqrl/web3-providers-ws": "0.1.0"
+    }
+}

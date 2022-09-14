@@ -1,5 +1,5 @@
 {
-    "name": "web3-zond-contract",
+    "name": "@theqrl/web3-zond-contract",
     "version": "0.1.0",
     "description": "Web3 module to interact with QRL smart contracts.",
     "license": "LGPL-3.0",
@@ -14,14 +14,14 @@
     "main": "lib/index.js",
     "dependencies": {
         "@types/bn.js": "^5.1.0",
-        "web3-zond-abi": "0.1.0",
-        "web3-zond-accounts": "0.1.0",
-        "web3-zond-core": "0.1.0",
-        "web3-zond-core-helpers": "0.1.0",
-        "web3-zond-core-method": "0.1.0",
-        "web3-zond-core-promievent": "0.1.0",
-        "web3-zond-core-subscriptions": "0.1.0",
-        "web3-zond-utils": "0.1.0"
+        "@theqrl/web3-zond-abi": "0.1.0",
+        "@theqrl/web3-zond-accounts": "0.1.0",
+        "@theqrl/web3-core": "0.1.0",
+        "@theqrl/web3-core-helpers": "0.1.0",
+        "@theqrl/web3-core-method": "0.1.0",
+        "@theqrl/web3-core-promievent": "0.1.0",
+        "@theqrl/web3-core-subscriptions": "0.1.0",
+        "@theqrl/web3-utils": "0.1.0"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

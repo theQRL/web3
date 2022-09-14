@@ -1,5 +1,5 @@
 {
-    "name": "web3-zond-accounts",
+    "name": "@theqrl/web3-zond-accounts",
     "version": "0.1.0",
     "description": "Web3 module to generate QRL accounts and sign data and transactions.",
     "license": "LGPL-3.0",
@@ -20,10 +20,10 @@
         "ethereumjs-util": "^7.0.10",
         "scrypt-js": "^3.0.1",
         "uuid": "3.3.2",
-        "web3-zond-core": "0.1.0",
-        "web3-zond-core-helpers": "0.1.0",
-        "web3-zond-core-method": "0.1.0",
-        "web3-zond-utils": "0.1.0"
+        "@theqrl/web3-core": "0.1.0",
+        "@theqrl/web3-core-helpers": "0.1.0",
+        "@theqrl/web3-core-method": "0.1.0",
+        "@theqrl/web3-utils": "0.1.0"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

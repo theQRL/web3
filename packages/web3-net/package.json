@@ -1,0 +1,24 @@
+{
+    "name": "@theqrl/web3-net",
+    "version": "0.1.0",
+    "description": "Web3 module to interact with the QRL nodes networking properties.",
+    "license": "LGPL-3.0",
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "types": "types/index.d.ts",
+    "scripts": {
+        "compile": "tsc -b tsconfig.json",
+        "dtslint": "dtslint --localTs ../../node_modules/typescript/lib types"
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+        "@theqrl/web3-core": "0.1.0",
+        "@theqrl/web3-core-method": "0.1.0",
+        "@theqrl/web3-utils": "0.1.0"
+    },
+    "devDependencies": {
+        "dtslint": "^3.4.1",
+        "typescript": "^3.9.5"
+    }
+}

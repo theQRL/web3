@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
     mode: "production",
     entry: {
-        web3: "./packages/zond-web3js/lib/index.js",
+        web3: "./packages/@theqrl/web3/lib/index.js",
     },
     plugins: [
         new CleanWebpackPlugin(),

@@ -1,0 +1,23 @@
+{
+    "name": "@theqrl/web3-core-subscriptions",
+    "version": "0.1.0",
+    "description": "Manages web3 subscriptions. This is an internal package.",
+    "license": "LGPL-3.0",
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "types": "types/index.d.ts",
+    "scripts": {
+        "compile": "tsc -b tsconfig.json",
+        "dtslint": "dtslint --localTs ../../node_modules/typescript/lib types"
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+        "eventemitter3": "4.0.4",
+        "@theqrl/web3-core-helpers": "0.1.0"
+    },
+    "devDependencies": {
+        "dtslint": "^3.4.1",
+        "typescript": "^3.9.5"
+    }
+}

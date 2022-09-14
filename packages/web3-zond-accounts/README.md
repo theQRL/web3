@@ -1,9 +1,9 @@
-# web3-zond-accounts
+# @theqrl/web3-zond-accounts
 
 
-This is a sub-package of zond-web3.js.
+This is a sub-package of @theqrl/web3.js.
 
-This is the accounts package used in the `web3-zond` package.
+This is the accounts package used in the `@theqrl/web3-zond` package.
 
 
 ## Installation
@@ -11,13 +11,13 @@ This is the accounts package used in the `web3-zond` package.
 ### Node.js
 
 ```bash
-npm install web3-zond-accounts
+npm install @theqrl/web3-zond-accounts
 ```
 
 ## Usage
 
 ```js
-const Web3ZondAccounts = require('web3-zond-accounts');
+const Web3ZondAccounts = require('@theqrl/web3-zond-accounts');
 
 const account = new Web3ZondAccounts('ws://localhost:8546');
 account.create();

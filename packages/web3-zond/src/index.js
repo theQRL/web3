@@ -1,35 +1,35 @@
 /*
- This file is part of zond-web3.js.
+ This file is part of @theqrl/web3.js.
 
- zond-web3.js is free software: you can redistribute it and/or modify
+ @theqrl/web3.js is free software: you can redistribute it and/or modify
  it under the terms of the GNU Lesser General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- zond-web3.js is distributed in the hope that it will be useful,
+ @theqrl/web3.js is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU Lesser General Public License for more details.
 
  You should have received a copy of the GNU Lesser General Public License
- along with zond-web3.js.  If not, see <http://www.gnu.org/licenses/>.
+ along with @theqrl/web3.js.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 "use strict";
 
-var core = require('web3-zond-core');
-var helpers = require('web3-zond-core-helpers');
-var Subscriptions = require('web3-zond-core-subscriptions').subscriptions;
-var Method = require('web3-zond-core-method');
-var utils = require('web3-zond-utils');
-var Net = require('web3-zond-net');
+var core = require('@theqrl/web3-core');
+var helpers = require('@theqrl/web3-core-helpers');
+var Subscriptions = require('@theqrl/web3-core-subscriptions').subscriptions;
+var Method = require('@theqrl/web3-core-method');
+var utils = require('@theqrl/web3-utils');
+var Net = require('@theqrl/web3-net');
 
-var ENS = require('web3-zond-ens');
-var Personal = require('web3-zond-personal');
-var BaseContract = require('web3-zond-contract');
-var Iban = require('web3-zond-iban');
-var Accounts = require('web3-zond-accounts');
-var abi = require('web3-zond-abi');
+var ENS = require('@theqrl/web3-zond-ens');
+var Personal = require('@theqrl/web3-zond-personal');
+var BaseContract = require('@theqrl/web3-zond-contract');
+var Iban = require('@theqrl/web3-zond-iban');
+var Accounts = require('@theqrl/web3-zond-accounts');
+var abi = require('@theqrl/web3-zond-abi');
 
 var getNetworkType = require('./getNetworkType.js');
 var formatter = helpers.formatters;

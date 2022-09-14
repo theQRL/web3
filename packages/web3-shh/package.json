@@ -1,0 +1,27 @@
+{
+    "name": "@theqrl/web3-shh",
+    "version": "0.1.0",
+    "description": "Web3 module to interact with the Whisper messaging protocol.",
+    "license": "LGPL-3.0",
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "types": "types/index.d.ts",
+    "scripts": {
+        "compile": "tsc -b tsconfig.json",
+        "dtslint": "dtslint --localTs ../../node_modules/typescript/lib  types",
+        "postinstall": "echo \"WARNING: the web3-shh api will be deprecated in the next version\""
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+        "@theqrl/web3-core": "0.1.0",
+        "@theqrl/web3-core-method": "0.1.0",
+        "@theqrl/web3-core-subscriptions": "0.1.0",
+        "@theqrl/web3-net": "0.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.6",
+        "dtslint": "^3.4.1",
+        "typescript": "^3.9.5"
+    }
+}

@@ -1,9 +1,9 @@
-# web3-zond-ens
+# @theqrl/web3-zond-ens
 
 
-This is a sub-package of zond-web3.js.
+This is a sub-package of @theqrl/web3.js.
 
-This is the contract package to be used in the `web3-zond` package.
+This is the contract package to be used in the `@theqrl/web3-zond` package.
 
 
 ## Installation
@@ -11,7 +11,7 @@ This is the contract package to be used in the `web3-zond` package.
 ### Node.js
 
 ```bash
-npm install web3-zond-ens
+npm install @theqrl/web3-zond-ens
 ```
 
 ## Usage

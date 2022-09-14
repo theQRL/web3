@@ -1,15 +1,15 @@
 /*
-    This file is part of zond-web3.js.
-    zond-web3.js is free software: you can redistribute it and/or modify
+    This file is part of @theqrl/web3.js.
+    @theqrl/web3.js is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-    zond-web3.js is distributed in the hope that it will be useful,
+    @theqrl/web3.js is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Lesser General Public License for more details.
     You should have received a copy of the GNU Lesser General Public License
-    along with zond-web3.js.  If not, see <http://www.gnu.org/licenses/>.
+    along with @theqrl/web3.js.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 import * as net from 'net';
@@ -30,16 +30,16 @@ import {
     BlockNumber,
     LogsOptions,
     PastLogsOptions
-} from 'web3-zond-core';
-import {Subscription} from 'web3-zond-core-subscriptions';
-import {AbiCoder} from 'web3-zond-abi';
-import {Accounts} from 'web3-zond-accounts';
-import {Contract, ContractOptions} from 'web3-zond-contract';
-import {Ens} from 'web3-zond-ens';
-import {Iban} from 'web3-zond-iban';
-import {Personal} from 'web3-zond-personal';
-import {Network} from 'web3-zond-net';
-import {AbiItem} from 'web3-zond-utils';
+} from '@theqrl/web3-core';
+import {Subscription} from '@theqrl/web3-core-subscriptions';
+import {AbiCoder} from '@theqrl/web3-zond-abi';
+import {Accounts} from '@theqrl/web3-zond-accounts';
+import {Contract, ContractOptions} from '@theqrl/web3-zond-contract';
+import {Ens} from '@theqrl/web3-zond-ens';
+import {Iban} from '@theqrl/web3-zond-iban';
+import {Personal} from '@theqrl/web3-zond-personal';
+import {Network} from '@theqrl/web3-net';
+import {AbiItem} from '@theqrl/web3-utils';
 import {BigNumber} from 'bignumber.js';
 import BN = require('bn.js');
 
@@ -51,7 +51,7 @@ export {
     hardfork,
     Common,
     chain
-} from 'web3-zond-core';
+} from '@theqrl/web3-core';
 
 export class Zond {
     constructor();

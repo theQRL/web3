@@ -3,7 +3,7 @@
 function getTestFiles() {
     switch (process.env.BROWSER_BUNDLE_TEST) {
         case 'publishedDist':
-            return ['packages/zond-web3js/dist/web3.min.js', 'test/e2e.minified.js'];
+            return ['packages/@theqrl/web3/dist/web3.min.js', 'test/e2e.minified.js'];
         case 'gitRepoDist':
             return ['dist/web3.min.js', 'test/e2e.minified.js'];
         default:

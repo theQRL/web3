@@ -1,9 +1,9 @@
-# web3-zond
+# @theqrl/web3-zond
 
 
-This is a sub-package of zond-web3.js.
+This is a sub-package of @theqrl/web3.js.
 
-This Eth package is used within some zond-web3.js packages.
+This Eth package is used within some @theqrl/web3.js packages.
 
 
 ## Installation
@@ -11,13 +11,13 @@ This Eth package is used within some zond-web3.js packages.
 ### Node.js
 
 ```bash
-npm install web3-zond
+npm install @theqrl/web3-zond
 ```
 
 ## Usage
 
 ```js
-const Web3Zond = require('web3-zond');
+const Web3Zond = require('@theqrl/web3-zond');
 
 const zond = new Web3Zond('ws://localhost:8546');
 ```

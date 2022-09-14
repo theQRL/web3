@@ -1,15 +1,15 @@
 {
-    "name": "zond-web3.js",
+    "name": "@theqrl/web3.js",
     "private": true,
     "description": "QRL JavaScript API wrapper repository",
     "license": "LGPL-3.0",
     "engines": {
         "node": ">=11.0.0"
     },
-    "main": "./packages/zond-web3js/src/index.js",
+    "main": "./packages/@theqrl/web3/src/index.js",
     "bundlesize": [
         {
-            "path": "./packages/zond-web3js/dist/web3.min.js",
+            "path": "./packages/@theqrl/web3/dist/web3.min.js",
             "maxSize": "1.5 mB",
             "compression": "none"
         }
@@ -17,7 +17,7 @@
     "scripts": {
         "version": "npm run build",
         "postinstall": "npm run bootstrap",
-        "build": "npm run bootstrap && lerna run compile && webpack && cp -r ./dist ./packages/zond-web3js",
+        "build": "npm run bootstrap && lerna run compile && webpack && cp -r ./dist ./packages/@theqrl/web3",
         "publish": "lerna publish",
         "bootstrap": "lerna bootstrap --hoist",
         "lint": "jshint *.js packages",
