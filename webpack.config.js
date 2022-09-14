@@ -7,11 +7,9 @@ module.exports = {
     entry: {
         web3: "./packages/@theqrl/web3/lib/index.js",
     },
+    devtool: false,
     plugins: [
         new CleanWebpackPlugin(),
-        new webpack.SourceMapDevToolPlugin({
-            filename: "[file].map",
-        }),
         new webpack.IgnorePlugin({
             checkResource(resource) {
                 // "@ethereumjs/common/genesisStates" consists ~800KB static files which are no more needed
