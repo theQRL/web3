@@ -21,7 +21,7 @@ import { Network } from '@theqrl/web3-net';
 import { Shh } from '@theqrl/web3-shh';
 import { Utils } from '@theqrl/web3-utils';
 
-export default class ZondWeb3 {
+export default class Web3 {
     constructor();
     constructor(provider: provider);
     constructor(provider: provider, net: net.Socket);

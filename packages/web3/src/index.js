@@ -27,7 +27,7 @@ var Shh = require('@theqrl/web3-shh');
 var Bzz = require('@theqrl/web3-bzz');
 var utils = require('@theqrl/web3-utils');
 
-var ZondWeb3 = function ZondWeb3() {
+var Web3 = function Web3() {
     var _this = this;
 
     // sets _requestmanager etc
@@ -54,9 +54,9 @@ var ZondWeb3 = function ZondWeb3() {
     };
 };
 
-ZondWeb3.version = version;
-ZondWeb3.utils = utils;
-ZondWeb3.modules = {
+Web3.version = version;
+Web3.utils = utils;
+Web3.modules = {
     Zond: Zond,
     Net: Net,
     Personal: Personal,
@@ -64,7 +64,7 @@ ZondWeb3.modules = {
     Bzz: Bzz
 };
 
-core.addProviders(ZondWeb3);
+core.addProviders(Web3);
 
-module.exports = ZondWeb3;
+module.exports = Web3;
 
