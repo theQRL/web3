@@ -51,7 +51,7 @@ var Accounts = function Accounts() {
     delete this.BatchRequest;
     delete this.extend;
 
-    var _ethereumCall = [
+    var _zondCall = [
         new Method({
             name: 'getNetworkId',
             call: 'net_version',
@@ -94,10 +94,10 @@ var Accounts = function Accounts() {
             }]
         }),
     ];
-    // attach methods to this._ethereumCall
-    this._ethereumCall = {};
-    _ethereumCall.forEach( (method) => {
-        method.attachToObject(_this._ethereumCall);
+    // attach methods to this._zondCall
+    this._zondCall = {};
+    _zondCall.forEach( (method) => {
+        method.attachToObject(_this._zondCall);
         method.setRequestManager(_this._requestManager);
     });
 
@@ -294,10 +294,10 @@ Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, ca
     // Otherwise, get the missing info from the Ethereum Node
     return Promise.all([
         ((isNot(tx.common) || isNot(tx.common.customChain.chainId)) ? //tx.common.customChain.chainId is not optional inside tx.common if tx.common is provided
-            ( isNot(tx.chainId) ? _this._ethereumCall.getChainId() : tx.chainId)
+            ( isNot(tx.chainId) ? _this._zondCall.getChainId() : tx.chainId)
             : undefined ),
-        isNot(tx.nonce) ? _this._ethereumCall.getTransactionCount(_this.privateKeyToAccount(privateKey).address) : tx.nonce,
-        isNot(hasTxSigningOptions) ? _this._ethereumCall.getNetworkId() : 1,
+        isNot(tx.nonce) ? _this._zondCall.getTransactionCount(_this.privateKeyToAccount(privateKey).address) : tx.nonce,
+        isNot(hasTxSigningOptions) ? _this._zondCall.getNetworkId() : 1,
         _handleTxPricing(_this, tx)
     ]).then(function(args) {
         const [txchainId, txnonce, txnetworkId, txgasInfo] = args;
@@ -403,8 +403,8 @@ function _handleTxPricing(_this, tx) {
                 resolve({ gasPrice: tx.gasPrice })
             } else {
                 Promise.all([
-                    _this._ethereumCall.getBlockByNumber(),
-                    _this._ethereumCall.getGasPrice()
+                    _this._zondCall.getBlockByNumber(),
+                    _this._zondCall.getGasPrice()
                 ]).then(responses => {
                     const [block, gasPrice] = responses;
                     if (

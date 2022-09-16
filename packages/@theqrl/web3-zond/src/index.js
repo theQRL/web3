@@ -368,7 +368,7 @@ var Zond = function Zond() {
     this.Contract.blockHeaderTimeout = this.blockHeaderTimeout;
     this.Contract.handleRevert = this.handleRevert;
     this.Contract._requestManager = this._requestManager;
-    this.Contract._ethAccounts = this.accounts;
+    this.Contract._zondAccounts = this.accounts;
     this.Contract.currentProvider = this._requestManager.provider;
 
     // add IBAN
