@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-core-subscriptions",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Manages web3 subscriptions. This is an internal package.",
     "license": "LGPL-3.0",
     "engines": {
@@ -13,8 +13,8 @@
     },
     "main": "lib/index.js",
     "dependencies": {
-        "eventemitter3": "4.0.4",
-        "@theqrl/web3-core-helpers": "0.1.0"
+        "@theqrl/web3-core-helpers": "0.1.1",
+        "eventemitter3": "4.0.4"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

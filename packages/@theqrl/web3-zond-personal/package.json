@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-zond-personal",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Web3 module to interact with the QRL blockchain accounts stored in the node.",
     "license": "LGPL-3.0",
     "engines": {
@@ -13,12 +13,12 @@
     },
     "main": "lib/index.js",
     "dependencies": {
-        "@types/node": "^12.12.6",
-        "@theqrl/web3-core": "0.1.0",
-        "@theqrl/web3-core-helpers": "0.1.0",
-        "@theqrl/web3-core-method": "0.1.0",
-        "@theqrl/web3-net": "0.1.0",
-        "@theqrl/web3-utils": "0.1.0"
+        "@theqrl/web3-core": "0.1.1",
+        "@theqrl/web3-core-helpers": "0.1.1",
+        "@theqrl/web3-core-method": "0.1.1",
+        "@theqrl/web3-net": "0.1.1",
+        "@theqrl/web3-utils": "0.1.1",
+        "@types/node": "^12.12.6"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-providers-http",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Module to handle web3 RPC connections over HTTP.",
     "license": "LGPL-3.0",
     "engines": {
@@ -13,10 +13,10 @@
     "types": "types/index.d.ts",
     "main": "lib/index.js",
     "dependencies": {
+        "@theqrl/web3-core-helpers": "0.1.1",
         "abortcontroller-polyfill": "^1.7.3",
         "cross-fetch": "^3.1.4",
-        "es6-promise": "^4.2.8",
-        "@theqrl/web3-core-helpers": "0.1.0"
+        "es6-promise": "^4.2.8"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

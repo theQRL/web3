@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-core-promievent",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "This package extends the EventEmitter with the Promise class to allow chaining as well as multiple final states of a function.",
     "license": "LGPL-3.0",
     "engines": {

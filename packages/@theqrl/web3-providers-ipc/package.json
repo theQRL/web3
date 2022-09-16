@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-providers-ipc",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Module to handle web3 RPC connections over IPC sockets.",
     "license": "LGPL-3.0",
     "engines": {
@@ -13,8 +13,8 @@
     "types": "types/index.d.ts",
     "main": "lib/index.js",
     "dependencies": {
-        "oboe": "2.1.5",
-        "@theqrl/web3-core-helpers": "0.1.0"
+        "@theqrl/web3-core-helpers": "0.1.1",
+        "oboe": "2.1.5"
     },
     "devDependencies": {
         "@types/node": "^12.12.6",

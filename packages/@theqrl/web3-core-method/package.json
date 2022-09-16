@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-core-method",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Creates the methods on the web3 modules. This is an internal package.",
     "license": "LGPL-3.0",
     "engines": {
@@ -14,10 +14,10 @@
     "main": "lib/index.js",
     "dependencies": {
         "@ethersproject/transactions": "^5.6.2",
-        "@theqrl/web3-core-helpers": "0.1.0",
-        "@theqrl/web3-core-promievent": "0.1.0",
-        "@theqrl/web3-core-subscriptions": "0.1.0",
-        "@theqrl/web3-utils": "0.1.0"
+        "@theqrl/web3-core-helpers": "0.1.1",
+        "@theqrl/web3-core-promievent": "0.1.1",
+        "@theqrl/web3-core-subscriptions": "0.1.1",
+        "@theqrl/web3-utils": "0.1.1"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",
