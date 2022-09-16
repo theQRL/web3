@@ -1,6 +1,7 @@
 {
     "name": "@theqrl/web3.js",
     "description": "QRL JavaScript API wrapper repository",
+    "version": "0.1.1",
     "license": "LGPL-3.0",
     "engines": {
         "node": ">=11.0.0"
