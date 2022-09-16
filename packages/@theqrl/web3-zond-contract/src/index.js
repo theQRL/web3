@@ -327,7 +327,7 @@ Contract.setProvider = function(provider, accounts) {
     // Contract.currentProvider = provider;
     core.packageInit(this, [provider]);
 
-    this._ethAccounts = accounts;
+    this._zondAccounts = accounts;
 };
 
 
@@ -628,7 +628,7 @@ Contract.prototype.deploy = function(options, callback){
         method: constructor,
         parent: this,
         deployData: options.data,
-        _ethAccounts: this.constructor._ethAccounts
+        _zondAccounts: this.constructor._zondAccounts
     }, options.arguments);
 
 };
@@ -763,7 +763,7 @@ Contract.prototype._on = function(){
                 }
             }
         },
-        type: 'eth',
+        type: 'zond',
         requestManager: this._requestManager
     });
 
@@ -833,7 +833,7 @@ Contract.prototype._createTxObject =  function _createTxObject(){
     txObject.arguments = args || [];
     txObject._method = this.method;
     txObject._parent = this.parent;
-    txObject._ethAccounts = this.parent.constructor._ethAccounts || this._ethAccounts;
+    txObject._zondAccounts = this.parent.constructor._zondAccounts || this._zondAccounts;
 
     if(this.deployData) {
         txObject._deployData = this.deployData;
@@ -896,7 +896,7 @@ Contract.prototype._executeMethod = function _executeMethod(){
     var _this = this,
         args = this._parent._processExecuteArguments.call(this, Array.prototype.slice.call(arguments), defer),
         defer = promiEvent((args.type !== 'send')),
-        ethAccounts = _this.constructor._ethAccounts || _this._ethAccounts;
+        ethAccounts = _this.constructor._zondAccounts || _this._zondAccounts;
 
     // simple return request for batch requests
     if(args.generateRequest) {
@@ -1041,7 +1041,7 @@ Contract.prototype._executeMethod = function _executeMethod(){
                 params: 1,
                 inputFormatter: [formatters.inputTransactionFormatter],
                 requestManager: _this._parent._requestManager,
-                accounts: _this.constructor._ethAccounts || _this._ethAccounts, // is eth.accounts (necessary for wallet signing)
+                accounts: _this.constructor._zondAccounts || _this._zondAccounts, // is eth.accounts (necessary for wallet signing)
                 defaultAccount: _this._parent.defaultAccount,
                 defaultBlock: _this._parent.defaultBlock,
                 transactionBlockTimeout: _this._parent.transactionBlockTimeout,

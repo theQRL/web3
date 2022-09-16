@@ -48,7 +48,7 @@ var Method = function Method(options) {
     this.defaultBlock = options.defaultBlock || 'latest';
     this.defaultAccount = options.defaultAccount || null;
     this.transactionBlockTimeout = options.transactionBlockTimeout || 50;
-    this.transactionConfirmationBlocks = options.transactionConfirmationBlocks || 24;
+    this.transactionConfirmationBlocks = 2; //TODO: keeping 2 for now, will revise later
     this.transactionPollingTimeout = options.transactionPollingTimeout || 750;
     this.transactionPollingInterval = options.transactionPollingInterval || 1000;
     this.blockHeaderTimeout = options.blockHeaderTimeout || 10; // 10 seconds
@@ -211,7 +211,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
         hasBytecode = isContractDeployment && payload.params[0].data.length > 2;
 
     // add custom send Methods
-    var _ethereumCalls = [
+    var _zondCalls = [
         new Method({
             name: 'getBlockByNumber',
             call: 'zond_getBlockByNumber',
@@ -253,10 +253,10 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
             }
         })
     ];
-    // attach methods to this._ethereumCall
-    var _ethereumCall = {};
-    _ethereumCalls.forEach(mthd =>  {
-        mthd.attachToObject(_ethereumCall);
+    // attach methods to this._zondCall
+    var _zondCall = {};
+    _zondCalls.forEach(mthd =>  {
+        mthd.attachToObject(_zondCall);
         mthd.requestManager = method.requestManager; // assign rather than call setRequestManager()
     });
 
@@ -274,7 +274,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                 };
             }
             // if we have a valid receipt we don't need to send a request
-            return (existingReceipt ? promiEvent.resolve(existingReceipt) : _ethereumCall.getTransactionReceipt(result))
+            return (existingReceipt ? promiEvent.resolve(existingReceipt) : _zondCall.getTransactionReceipt(result))
             // catch error from requesting receipt
                 .catch(function (err) {
                     sub.unsubscribe();
@@ -308,18 +308,18 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                         // for parity instant-seal
                         if (existingReceipt === undefined || confirmationCount !== 0) {
                             // Get latest block to emit with confirmation
-                            var latestBlock = await _ethereumCall.getBlockByNumber('latest');
+                            var latestBlock = await _zondCall.getBlockByNumber('latest');
                             var latestBlockHash = latestBlock ? latestBlock.hash : null;
 
                             if (isPolling) { // Check if actually a new block is existing on polling
                                 if (lastBlock) {
-                                    block = await _ethereumCall.getBlockByNumber(lastBlock.number + 1);
+                                    block = await _zondCall.getBlockByNumber(lastBlock.number + 1);
                                     if (block) {
                                         lastBlock = block;
                                         defer.eventEmitter.emit('confirmation', confirmationCount, receipt, latestBlockHash);
                                     }
                                 } else {
-                                    block = await _ethereumCall.getBlockByNumber(receipt.blockNumber);
+                                    block = await _zondCall.getBlockByNumber(receipt.blockNumber);
                                     lastBlock = block;
                                     defer.eventEmitter.emit('confirmation', confirmationCount, receipt, latestBlockHash);
                                 }
@@ -365,7 +365,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
 
                         var code;
                         try {
-                            code = await _ethereumCall.getCode(receipt.contractAddress);
+                            code = await _zondCall.getCode(receipt.contractAddress);
                         } catch(err){
                             // ignore;
                         }
@@ -557,7 +557,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
         }
 
         // Subscribe to new block headers to look for tx receipt
-        _ethereumCall.subscribe('newBlockHeaders', function (err, blockHeader, sub) {
+        _zondCall.subscribe('newBlockHeaders', function (err, blockHeader, sub) {
             blockHeaderArrived = true;
 
             if (err || !blockHeader) {
@@ -578,7 +578,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
 
 
     // first check if we already have a confirmed transaction
-    _ethereumCall.getTransactionReceipt(result)
+    _zondCall.getTransactionReceipt(result)
         .then(function (receipt) {
             if (receipt && receipt.blockHash) {
                 if (defer.eventEmitter.listeners('confirmation').length > 0) {
