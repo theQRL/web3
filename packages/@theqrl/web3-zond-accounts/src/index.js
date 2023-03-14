@@ -253,7 +253,7 @@ Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, ca
             // var rlpEncoded = signedTx.serialize().toString('hex');
             // var rawTransaction = '0x' + rlpEncoded;
             var rawTransaction = transaction
-            var transactionHash = txHelper.GenerateTxSigningHash(transaction).slice(2);
+            var transactionHash = txHelper.GenerateTxSigningHash(transaction)
 
             var result = {
                 // messageHash: '0x' + Buffer.from(signedTx.getMessageToSign(true)).toString('hex'),

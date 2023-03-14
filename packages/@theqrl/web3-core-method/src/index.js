@@ -236,9 +236,16 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
         }),
         new Method({
             name: 'getTransactionByHash',
-            call: 'zond_getTransactionByHash',
+            call: 'zond_getTransaction',
             params: 1,
             inputFormatter: [null],
+            outputFormatter: formatters.outputTransactionFormatter
+        }),
+        new Method({
+            name: "getTransactionByBlockHashAndIndex",
+            call: "zond_getTransactionByBlockHashAndIndex",
+            params: 2,
+            inputFormatter: [null, null],
             outputFormatter: formatters.outputTransactionFormatter
         }),
         new Subscriptions({
@@ -287,6 +294,13 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                         defer.eventEmitter,
                         defer.reject
                     );
+                }).then(async function(rec) {
+                    _zondCall.getTransactionByBlockHashAndIndex(rec?.blockHash, '0x'+rec?.transactionIndex.toString(16)).then((tx)=>{
+                        if(tx?.hash == rec.transactionHash) {
+                            rec.status = true
+                        }
+                    })
+                    return rec
                 })
                 // if CONFIRMATION listener exists check for confirmations, by setting canUnsubscribe = false
                 .then(async function (receipt) {
@@ -343,7 +357,6 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                 })
                 // CHECK for CONTRACT DEPLOYMENT
                 .then(async function (receipt) {
-
                     if (isContractDeployment && !promiseResolved) {
 
                         if (!receipt.contractAddress) {
@@ -427,7 +440,6 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
 
                         } else {
                             receiptJSON = JSON.stringify(receipt, null, 2);
-
                             if (receipt.status === false || receipt.status === '0x0') {
                                 try {
                                     var revertMessage = null;
@@ -506,7 +518,6 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                 // time out the transaction if not mined after 50 blocks
                 .catch(function () {
                     timeoutCount++;
-
                     // check to see if we are http polling
                     if (!!isPolling) {
                         // polling timeout is different than transactionBlockTimeout blocks since we are triggering every second
@@ -580,7 +591,7 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
     // first check if we already have a confirmed transaction
     _zondCall.getTransactionReceipt(result)
         .then(function (receipt) {
-            if (receipt && receipt.blockHash) {
+            if (receipt && receipt.blockHash && receipt.status === true) {
                 if (defer.eventEmitter.listeners('confirmation').length > 0) {
                     // We must keep on watching for new Blocks, if a confirmation listener is present
                     startWatching(receipt);
