@@ -294,13 +294,6 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                         defer.eventEmitter,
                         defer.reject
                     );
-                }).then(async function(rec) {
-                    _zondCall.getTransactionByBlockHashAndIndex(rec?.blockHash, '0x'+rec?.transactionIndex.toString(16)).then((tx)=>{
-                        if(tx?.hash == rec.transactionHash) {
-                            rec.status = true
-                        }
-                    })
-                    return rec
                 })
                 // if CONFIRMATION listener exists check for confirmations, by setting canUnsubscribe = false
                 .then(async function (receipt) {
@@ -597,7 +590,6 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                     startWatching(receipt);
                 }
                 checkConfirmation(receipt, false);
-
             } else if (!promiseResolved) {
                 startWatching();
             }

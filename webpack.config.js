@@ -61,10 +61,4 @@ module.exports = {
         library: "Web3",
         libraryTarget: "umd",
     },
-    node: {
-        http: true,
-        https: true,
-        crypto: true,
-        buffer: true
-    }
 };

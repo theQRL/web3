@@ -158,12 +158,13 @@ let GenerateTxSigningHash = function(tx) {
     buf.write(bytesInput, offset, 'hex')
 
     return "0x"+crypto.createHash('sha256').update(buf).digest('hex')
-}
+} 
 
-let SignTx = function(tx, signer) {
+let SignTx = async function(tx, signer) {
     let signingHash = GenerateTxSigningHash(tx).slice(2)
-    tx.signature = signer.Sign(Buffer.from(signingHash, 'hex'))
-    tx.pk = signer.pk
+    let signature = await signer.Sign(Buffer.from(signingHash, 'hex'))
+    tx.signature = '0x' + Buffer.from(signature, 'binary').toString('hex')
+    tx.pk = '0x' + Buffer.from(signer.pk, 'hex').toString('hex')
 }
 
 module.exports = {

@@ -30,7 +30,7 @@ var Common = require('@ethereumjs/common').default;
 var HardForks = require('@ethereumjs/common').Hardfork;
 var ethereumjsUtil = require('ethereumjs-util');
 const crypto = require("crypto");
-require('./qrllib-js')
+const dilithiumWallet = require('@theqrl/wallet.js');
 const txHelper = require('./helper/tx')
 
 var isNot = function(value) {
@@ -109,11 +109,11 @@ Accounts.prototype._addAccountFunctions = function(account) {
     var _this = this;
 
     // add sign functions
-    account.signTransaction = function signTransaction(tx, callback) {
-        return _this.signTransaction(tx, account.privateKey, callback);
+    account.signTransaction = async function signTransaction(tx, callback) {
+        return await _this.signTransaction(tx, account.privateKey, callback);
     };
-    account.sign = function sign(data) {
-        return _this.sign(data, account.privateKey);
+    account.sign = async function sign(data) {
+        return await _this.sign(data, account.privateKey);
     };
 
     account.encrypt = function encrypt(password, options) {
@@ -126,7 +126,7 @@ Accounts.prototype._addAccountFunctions = function(account) {
 
 Accounts.prototype.create = function create(entropy) {
     // return this._addAccountFunctions(Account.create(entropy || utils.randomHex(32)));
-    return this._addAccountFunctions(dilithium.New());
+    return this._addAccountFunctions(dilithiumWallet.New());
 };
 
 Accounts.prototype.privateKeyToAccount = function privateKeyToAccount(privateKey, ignoreLength) {
@@ -140,7 +140,7 @@ Accounts.prototype.privateKeyToAccount = function privateKeyToAccount(privateKey
     }
 
     // return this._addAccountFunctions(Account.fromPrivate(privateKey));
-    return this._addAccountFunctions(dilithium.NewFromSeed(privateKey))
+    return this._addAccountFunctions(dilithiumWallet.NewDilithiumFromSeed(privateKey))
 };
 
 Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, callback) {
@@ -179,7 +179,7 @@ Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, ca
         return Promise.reject(error);
     }
 
-    function signed(tx) {
+    async function signed(tx) {
         const error = _validateTransactionForSigning(tx);
 
         if (error) {
@@ -237,8 +237,8 @@ Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, ca
             }
             // var ethTx = TransactionFactory.fromTxData(transaction, transactionOptions);
             // var signedTx = ethTx.sign(Buffer.from(privateKey, 'hex'));
-            let d = dilithium.NewFromSeed(privateKey)
-            txHelper.SignTx(transaction, d)
+            let d = await dilithiumWallet.NewDilithiumFromSeed(Buffer.from(privateKey, 'hex'))
+            await txHelper.SignTx(transaction, d)
             // var validationErrors = signedTx.validate(true);
 
 
@@ -288,7 +288,10 @@ Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, ca
         ) &&
         hasTxSigningOptions
     ) {
-        return Promise.resolve(signed(tx));
+        
+        return signed(tx).then((res) => {
+            Promise.resolve(res)
+        });
     }
 
     // Otherwise, get the missing info from the Ethereum Node
@@ -299,14 +302,14 @@ Accounts.prototype.signTransaction = function signTransaction(tx, privateKey, ca
         isNot(tx.nonce) ? _this._zondCall.getTransactionCount(_this.privateKeyToAccount(privateKey).address) : tx.nonce,
         isNot(hasTxSigningOptions) ? _this._zondCall.getNetworkId() : 1,
         _handleTxPricing(_this, tx)
-    ]).then(function(args) {
+    ]).then(async function(args) {
         const [txchainId, txnonce, txnetworkId, txgasInfo] = args;
 
         if ( (isNot(txchainId) && isNot(tx.common) && isNot(tx.common.customChain.chainId)) || isNot(txnonce) || isNot(txnetworkId) || isNot(txgasInfo)) {
             throw new Error('One of the values "chainId", "networkId", "gasPrice", or "nonce" couldn\'t be fetched: ' + JSON.stringify(args));
         }
 
-    return signed({
+    return await signed({
             ...tx,
             ... ((isNot(tx.common) || isNot(tx.common.customChain.chainId) ) ? {chainId: txchainId}:{}), // if common.customChain.chainId is provided no need to add tx.chainId
             nonce: txnonce,
@@ -467,7 +470,7 @@ Accounts.prototype.hashMessage = function hashMessage(data) {
     return '0x' + crypto.createHash('sha256').update(ethMessage).digest('hex');
 };
 
-Accounts.prototype.sign = function sign(data, privateKey) {
+Accounts.prototype.sign = async function sign(data, privateKey) {
     if (!privateKey.startsWith('0x')) {
         privateKey = '0x' + privateKey;
     }
@@ -476,11 +479,11 @@ Accounts.prototype.sign = function sign(data, privateKey) {
     if (privateKey.length !== 98) {
         throw new Error("Private key must be 98 bytes long");
     }
-    var dilithium_acc = dilithium.NewFromSeed(privateKey)
+    var dilithium_acc = await dilithiumWallet.NewDilithiumFromSeed(Buffer.from(privateKey, 'hex'))
 
     var hash = this.hashMessage(data);
     // var signature = Account.sign(hash, privateKey);
-    var signature = dilithium_acc.Sign(hash)
+    var signature = await dilithium_acc.Sign(Buffer.from(hash.slice(2), 'hex'))
     var vrs = Account.decodeSignature(signature);
     return {
         message: data,

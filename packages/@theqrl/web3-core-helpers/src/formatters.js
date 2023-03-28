@@ -291,7 +291,11 @@ var outputTransactionReceiptFormatter = function (receipt) {
     }
 
     if (typeof receipt.status !== 'undefined' && receipt.status !== null) {
-        receipt.status = Boolean(parseInt(receipt.status));
+        if (typeof receipt.status === 'boolean') {
+            receipt.status = receipt.status
+        } else {
+            receipt.status = Boolean(parseInt(receipt.status));
+        }
     }
 
     return receipt;
