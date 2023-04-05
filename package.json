@@ -88,5 +88,8 @@
         "wait-port": "^0.2.9",
         "webpack": "^4.44.2",
         "webpack-cli": "^4.9.1"
+    },
+    "dependencies": {
+        "@theqrl/wallet.js": "file:../postquantum-crypto-wallet/theqrl-wallet.js-0.0.1.tgz"
     }
 }

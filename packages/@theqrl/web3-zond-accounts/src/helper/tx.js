@@ -162,7 +162,7 @@ let GenerateTxSigningHash = function(tx) {
 
 let SignTx = async function(tx, signer) {
     let signingHash = GenerateTxSigningHash(tx).slice(2)
-    let signature = await signer.Sign(Buffer.from(signingHash, 'hex'))
+    let signature = await signer.sign(Buffer.from(signingHash, 'hex'))
     tx.signature = '0x' + Buffer.from(signature, 'binary').toString('hex')
     tx.pk = '0x' + Buffer.from(signer.pk, 'hex').toString('hex')
 }

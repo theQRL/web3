@@ -486,7 +486,7 @@ var Zond = function Zond() {
         }),
         new Method({
             name: 'getTransaction',
-            call: 'zond_getTransactionByHash',
+            call: 'zond_getTransaction',
             params: 1,
             inputFormatter: [null],
             outputFormatter: formatter.outputTransactionFormatter
