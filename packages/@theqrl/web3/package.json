@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "QRL JavaScript API",
     "license": "LGPL-3.0",
     "engines": {
@@ -20,16 +20,16 @@
         "postinstall": "echo \"WARNING: the web3-shh and web3-bzz api will be deprecated in the next version\""
     },
     "dependencies": {
-        "@theqrl/web3-bzz": "0.1.1",
-        "@theqrl/web3-core": "0.1.1",
-        "@theqrl/web3-net": "0.1.1",
-        "@theqrl/web3-shh": "0.1.1",
-        "@theqrl/web3-utils": "0.1.1",
-        "@theqrl/web3-zond": "0.1.1",
-        "@theqrl/web3-zond-personal": "0.1.1"
+        "@theqrl/web3-bzz": "0.1.2",
+        "@theqrl/web3-core": "0.1.2",
+        "@theqrl/web3-net": "0.1.2",
+        "@theqrl/web3-shh": "0.1.2",
+        "@theqrl/web3-utils": "0.1.2",
+        "@theqrl/web3-zond": "0.1.2",
+        "@theqrl/web3-zond-personal": "0.1.2"
     },
     "devDependencies": {
-        "@theqrl/web3-core-helpers": "0.1.1",
+        "@theqrl/web3-core-helpers": "0.1.2",
         "@types/node": "^12.12.6",
         "dtslint": "^3.4.1",
         "typescript": "^3.9.5"

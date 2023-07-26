@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-zond-ens",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "ENS support for @theqrl/web3.",
     "license": "LGPL-3.0",
     "engines": {
@@ -13,17 +13,17 @@
     },
     "main": "lib/index.js",
     "dependencies": {
-        "@theqrl/web3-core": "0.1.1",
-        "@theqrl/web3-core-helpers": "0.1.1",
+        "@theqrl/web3-core": "0.1.2",
+        "@theqrl/web3-core-helpers": "0.1.2",
         "@theqrl/web3-core-promievent": "0.1.1",
-        "@theqrl/web3-utils": "0.1.1",
-        "@theqrl/web3-zond-abi": "0.1.1",
-        "@theqrl/web3-zond-contract": "0.1.1",
+        "@theqrl/web3-utils": "0.1.2",
+        "@theqrl/web3-zond-abi": "0.1.2",
+        "@theqrl/web3-zond-contract": "0.1.2",
         "content-hash": "^2.5.2",
         "eth-ens-namehash": "2.0.8"
     },
     "devDependencies": {
-        "@theqrl/web3-zond": "0.1.1",
+        "@theqrl/web3-zond": "0.1.2",
         "dtslint": "^3.4.1",
         "typescript": "^3.9.5"
     }

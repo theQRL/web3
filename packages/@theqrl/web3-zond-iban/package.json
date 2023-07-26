@@ -1,6 +1,6 @@
 {
     "name": "@theqrl/web3-zond-iban",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "This package converts QRL addresses to IBAN addresses a vice versa.",
     "license": "LGPL-3.0",
     "engines": {
@@ -13,7 +13,7 @@
     },
     "main": "lib/index.js",
     "dependencies": {
-        "@theqrl/web3-utils": "0.1.1",
+        "@theqrl/web3-utils": "0.1.2",
         "bn.js": "^5.2.1"
     },
     "devDependencies": {
