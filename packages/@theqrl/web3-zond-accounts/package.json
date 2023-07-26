@@ -26,7 +26,7 @@
         "ethereumjs-util": "^7.0.10",
         "scrypt-js": "^3.0.1",
         "uuid": "3.3.2",
-        "@theqrl/wallet.js": "file:../postquantum-crypto-wallet/theqrl-wallet.js-0.0.1.tgz"
+        "@theqrl/wallet.js": "^0.1.0"
     },
     "devDependencies": {
         "dtslint": "^3.4.1",

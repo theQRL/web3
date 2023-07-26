@@ -70,14 +70,14 @@ const packageInit = (pkg, args) => {
 
     // attach extend function
     pkg.extend = extend(pkg);
-}
+};
 
 const addProviders = (pkg) => {
     pkg.givenProvider = requestManager.Manager.givenProvider;
     pkg.providers = requestManager.Manager.providers;
-}
+};
 
 module.exports = {
     packageInit,
     addProviders
-}
+};

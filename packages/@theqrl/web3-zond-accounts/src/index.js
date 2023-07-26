@@ -479,11 +479,10 @@ Accounts.prototype.sign = async function sign(data, privateKey) {
     if (privateKey.length !== 98) {
         throw new Error("Private key must be 98 bytes long");
     }
-    var dilithium_acc = new Dilithium(Buffer.from(privateKey, 'hex'))
+    var dilithiumAcc = new Dilithium(Buffer.from(privateKey, 'hex'));
 
     var hash = this.hashMessage(data);
-    // var signature = Account.sign(hash, privateKey);
-    var signature = await dilithium_acc.Sign(Buffer.from(hash.slice(2), 'hex'))
+    var signature = await dilithiumAcc.Sign(Buffer.from(hash.slice(2), 'hex'))
     var vrs = Account.decodeSignature(signature);
     return {
         message: data,

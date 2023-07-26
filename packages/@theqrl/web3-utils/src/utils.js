@@ -390,7 +390,7 @@ var isHex = function (hex) {
  */
 var stripHexPrefix = function (str) {
     if (str !== 0 && isHex(str))
-        return str.replace(/^(-)?0x/i, '$1')
+        return str.replace(/^(-)?0x/i, '$1');
     return str;
 };
 
@@ -528,12 +528,12 @@ var sha3Raw = function(value) {
  */
 var toNumber = function(value) {
     return typeof value === 'number' ? value : hexToNumber(toHex(value));
-}
+};
 
 // 1.x currently accepts 0x... strings, bn.js after update doesn't. it would be a breaking change
 var BNwrapped = function (value) {
     // check negative
-    if (typeof value == "string" && value.includes("0x")) {
+    if (typeof value === "string" && value.includes("0x")) {
         const [negative, hexValue] = value.toLocaleLowerCase().startsWith('-') ? ["-", value.slice(3)] : ["", value.slice(2)];
         return new BN(negative + hexValue, 16);
     }

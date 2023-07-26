@@ -322,34 +322,34 @@ var toChecksumAddress = function (address) {
  * @returns {Number} -1, 0, or 1
  */
 var compareBlockNumbers = function(a, b) {
-    if (a == b) {
+    if (a === b) {
         return 0;
-    } else if (("genesis" == a || "earliest" == a || 0 == a) && ("genesis" == b || "earliest" ==  b || 0 == b)) {
+    } else if (("genesis" === a || "earliest" === a || 0 === a) && ("genesis" === b || "earliest" ===  b || 0 === b)) {
         return 0;
-    } else if ("genesis" == a || "earliest" == a) {
+    } else if ("genesis" === a || "earliest" === a) {
         // b !== a, thus a < b
         return -1;
-    } else if ("genesis" == b || "earliest" == b) {
+    } else if ("genesis" === b || "earliest" === b) {
         // b !== a, thus a > b
         return 1;
-    } else if (a == "latest") {
-        if (b == "pending") {
+    } else if (a === "latest") {
+        if (b === "pending") {
             return -1;
         } else {
             // b !== ("pending" OR "latest"), thus a > b
             return 1;
         }
     } else if (b === "latest") {
-        if (a == "pending") {
+        if (a === "pending") {
             return 1;
         } else {
             // b !== ("pending" OR "latest"), thus a > b
             return -1
         }
-    } else if (a == "pending") {
+    } else if (a === "pending") {
         // b (== OR <) "latest", thus a > b
         return 1;
-    } else if (b == "pending") {
+    } else if (b === "pending") {
         return -1;
     } else {
         let bnA = new BN(a);
