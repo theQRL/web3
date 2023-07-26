@@ -279,7 +279,7 @@ var outputTransactionReceiptFormatter = function (receipt) {
         receipt.cumulativeGasUsed = utils.hexToNumber(receipt.cumulativeGasUsed);
         receipt.gasUsed = utils.hexToNumber(receipt.gasUsed);
         if (receipt.effectiveGasPrice) {
-            receipt.effectiveGasPrice = utils.hexToNumber(receipt.effectiveGasPrice)
+            receipt.effectiveGasPrice = utils.hexToNumber(receipt.effectiveGasPrice);
         }
     }
     if (Array.isArray(receipt.logs)) {
@@ -291,7 +291,11 @@ var outputTransactionReceiptFormatter = function (receipt) {
     }
 
     if (typeof receipt.status !== 'undefined' && receipt.status !== null) {
-        receipt.status = Boolean(parseInt(receipt.status));
+        if (typeof receipt.status === 'boolean') {
+            receipt.status = receipt.status;
+        } else {
+            receipt.status = Boolean(parseInt(receipt.status));
+        }
     }
 
     return receipt;
@@ -321,7 +325,7 @@ var outputBlockFormatter = function (block) {
 
     if (Array.isArray(block.transactions)) {
         block.transactions.forEach(function (item) {
-            if (!(typeof item === 'string'))
+            if (typeof item !== 'string')
                 return outputTransactionFormatter(item);
         });
     }
@@ -330,7 +334,7 @@ var outputBlockFormatter = function (block) {
         block.miner = utils.toChecksumAddress(block.miner);
 
     if (block.baseFeePerGas)
-        block.baseFeePerGas = utils.hexToNumber(block.baseFeePerGas)
+        block.baseFeePerGas = utils.hexToNumber(block.baseFeePerGas);
 
     return block;
 };
@@ -356,7 +360,7 @@ var inputLogFormatter = function (options) {
             return utils.fromUtf8(value);
     };
 
-    if (options === undefined) options = {}
+    if (options === undefined) options = {};
     // If options !== undefined, don't blow out existing data
     if (options.fromBlock === undefined) options = {...options, fromBlock: 'latest'}
     if (options.fromBlock || options.fromBlock === 0)

@@ -53,6 +53,7 @@
         "@types/node": "^12.12.68",
         "@types/prettier": "2.6.0",
         "babel-loader": "^8.1.0",
+        "babel-plugin-transform-commonjs": "^1.1.6",
         "bignumber.js": "^9.0.1",
         "bn.js": "^5.2.1",
         "browserify": "^16.5.2",
@@ -88,5 +89,7 @@
         "webpack": "^4.44.2",
         "webpack-cli": "^4.9.1"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@theqrl/wallet.js": "^0.1.0"
+    }
 }
